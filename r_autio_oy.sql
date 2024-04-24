@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 24, 2024 at 09:58 AM
+-- Generation Time: Apr 24, 2024 at 12:42 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -67,6 +67,28 @@ INSERT INTO `asunto` (`asuntoID`, `taloyhtioID`, `asunnon_numero`, `tilan_tyyppi
 (3, 2, 1, 'asunto'),
 (4, 2, 2, 'asunto'),
 (5, 2, 3, 'asunto');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `isannoitsija`
+--
+
+CREATE TABLE `isannoitsija` (
+  `isannoitsijaID` int(11) NOT NULL,
+  `taloyhtioID` int(11) NOT NULL,
+  `etunimi` varchar(100) NOT NULL,
+  `sukunimi` varchar(100) NOT NULL,
+  `tunnus` varchar(50) NOT NULL,
+  `salasana` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `isannoitsija`
+--
+
+INSERT INTO `isannoitsija` (`isannoitsijaID`, `taloyhtioID`, `etunimi`, `sukunimi`, `tunnus`, `salasana`) VALUES
+(1, 1, 'Ismo', 'Isännöitsijä', 'ism_isa', 'salasana5');
 
 -- --------------------------------------------------------
 
@@ -199,6 +221,13 @@ ALTER TABLE `asunto`
   ADD KEY `taloyhtioID` (`taloyhtioID`);
 
 --
+-- Indexes for table `isannoitsija`
+--
+ALTER TABLE `isannoitsija`
+  ADD PRIMARY KEY (`isannoitsijaID`),
+  ADD KEY `isannoitsija_ibfk_1` (`taloyhtioID`);
+
+--
 -- Indexes for table `taloyhtio`
 --
 ALTER TABLE `taloyhtio`
@@ -248,6 +277,12 @@ ALTER TABLE `asunto`
   MODIFY `asuntoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `isannoitsija`
+--
+ALTER TABLE `isannoitsija`
+  MODIFY `isannoitsijaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `taloyhtio`
 --
 ALTER TABLE `taloyhtio`
@@ -292,6 +327,12 @@ ALTER TABLE `asukas`
 --
 ALTER TABLE `asunto`
   ADD CONSTRAINT `asunto_ibfk_1` FOREIGN KEY (`taloyhtioID`) REFERENCES `taloyhtio` (`taloyhtioID`);
+
+--
+-- Constraints for table `isannoitsija`
+--
+ALTER TABLE `isannoitsija`
+  ADD CONSTRAINT `isannoitsija_ibfk_1` FOREIGN KEY (`taloyhtioID`) REFERENCES `taloyhtio` (`taloyhtioID`);
 
 --
 -- Constraints for table `tyotehtava`
