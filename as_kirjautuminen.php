@@ -5,6 +5,51 @@
 
     // tietokantayhteyden luominen
     require "yhteys.php";
+
+    // aloitetaan sessio, tämänkin voi varmaan siirtää toiseen tiedostoon
+    // myöhemmin -Otso
+    session_start();
+
+    // Alla olevat php-koodit voi myöhemmin mahdollisesti siirtää erilliseen
+    // php-tiedostoon selkeyttämiseksi, mutta varmistetaan ensin toimivuus
+    // -Otso
+?>
+<?php
+    // jos sessio on käynnissä, palautetaan käyttäjä asukassivulle
+    if(isset($_SESSION['tunnus'])){
+        header("location: as_sivu.php");
+        exit;
+    }
+?>
+
+<?php
+    // koodinpätkä joka tarkistaa syötetyn tunnuksen ja salasanan
+    if(isset($_POST['submit'])){
+        $tunnus = $_POST['tunnus'];
+        $salasana = $_POST['salasana'];
+
+        // tietokantahaku asukas-taulusta
+        $kirjaudu = $yhteys->query("SELECT * FROM asukas WHERE tunnus = '$tunnus'");
+        $kirjaudu->execute();
+
+        $data = $kirjaudu->fetch(PDO::FETCH_ASSOC);
+
+        // tarkistetaan tietokantahaun rivit
+        if($kirjaudu->rowCount() > 0){
+
+            // verrataan tietokannan salasanaan, avataan sessio ja siirrytään
+            // asukassivulle
+            if($salasana == $data['salasana']){
+                $_SESSION['tunnus'] = $data['tunnus'];
+                header("location: as_sivu.php");
+                exit;
+            }else{
+                echo "Tunnus tai salasana on väärin";
+            }
+        }else{
+            echo "Tunnus tai salasana on väärin";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
