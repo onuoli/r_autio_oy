@@ -40,6 +40,7 @@
             // verrataan tietokannan salasanaan, avataan sessio ja siirrytään
             // asukassivulle
             if($salasana == $data['salasana']){
+                $_SESSION['asukas'] = true;
                 $_SESSION['tunnus'] = $data['tunnus'];
                 header("location: as_sivu.php");
                 exit;
