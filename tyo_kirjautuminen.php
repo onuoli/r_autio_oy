@@ -40,6 +40,7 @@
             // verrataan tietokannan salasanaan, avataan sessio ja siirrytään
             // työntekijäsivulle
             if($salasana == $data['salasana']){
+                $_SESSION['tyontekija'] = true;
                 $_SESSION['tunnus'] = $data['tunnus'];
                 header("location: tyo_sivu.php");
                 exit;
