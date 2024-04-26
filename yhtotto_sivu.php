@@ -1,7 +1,7 @@
 
 <!--Yhteydenoton koodit, lomake itsessään modalilla index.php puolella -Henry-->
 <?php
-    require "connect.php";
+    require "yhteys.php";
 
     if(isset($_POST['syota'])){
         $nimi=$_POST['nimi'];
