@@ -3,5 +3,5 @@
     session_unset();
     session_destroy();
 
-    header("location: as_kirjautuminen.php");
+    header("location: index.php");
 ?>
