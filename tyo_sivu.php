@@ -24,6 +24,10 @@
     $kysely = "SELECT * FROM vikailmoitus";
     $data = $yhteys->query($kysely);
 
+    // tietokantahaku työtehtäville
+    $kysely2 = "SELECT * FROM tyotehtava";
+    $data2 = $yhteys->query($kysely2);
+
 ?>
 
 <br>
@@ -65,5 +69,33 @@
                     <?php endwhile; ?>
                 </tbody>
             </table>
+            <h1>Työtehtävät</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>tyotehtavaID</th>
+                        <th>vikailmoitusID</th>
+                        <th>tyontekijaID</th>
+                        <th>kuvaus</th>
+                        <th>status</th>
+                        <th>korjaustoimenpide</th>
+                        <th>valmistumisaika</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while($rivit2 = $data2->fetch(PDO::FETCH_OBJ)): ?>
+                    <tr>
+                        <td><?php echo $rivit2->tyotehtavaID; ?></td>
+                        <td><?php echo $rivit2->vikailmoitusID ?></td>
+                        <td><?php echo $rivit2->tyontekijaID; ?></td>
+                        <td><?php echo $rivit2->kuvaus; ?></td>
+                        <td><?php echo $rivit2->status; ?></td>
+                        <td><?php echo $rivit2->korjaustoimenpide; ?></td>
+                        <td><?php echo $rivit2->valmistumisaika; ?></td>
+                    </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
