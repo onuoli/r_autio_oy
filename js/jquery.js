@@ -48,6 +48,7 @@ $(document).ready(function()
             })
     })
 
+    //Otsikoiden vaihtumiselle jos navigoi navbarin linkkien kautta
     $('#link1, #link2, #link3').click(function(){
         $('#headref').hide();
         $('#mainheader').show();
