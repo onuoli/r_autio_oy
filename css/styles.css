@@ -1,52 +1,138 @@
-/*Jotain vain muotoiluja ja värejä jotta erottuu elementit -Henry*/
-
+/*Navbarin asetukset*/
 div.stickynavbar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;    
-    background-color: black;
-}
-
-.stickynavbar
-{
-  border-radius: 4px;
-  border: 2px solid rgb(160, 20, 74);
-
-}
-
-.head>h1
-{
-  font-size: 5rem;
-  text-align: center;
-  padding: 20px;
-  background-color: aqua;
-}
-
-@media (max-width: 768px) {
-  .head > h1 {
-    font-size: 3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .head > h1 {
-    font-size: 2rem;
-  }
-}
-
-.btn-group
-{
-  float: right;
+  position: -webkit-sticky;
   position: sticky;
-  margin-top: 5px;
-  margin-right: 10px;
-  background-color: rgba(221, 221, 221, 0.9);
+  top: 0;    
+  background-color: black;
+  z-index: 1000;
 }
 
-.dropdown-menu{
-background-color: rgba(221, 221, 221, 0.9);
-  z-index: 0.5;
-  font-weight: bolder;
-  padding: 40px;
-  font-size: 1.5rem;
+/*Pääotsikon asetukset*/
+@media (max-width: 768px) {
+.head > h1 {
+  font-size: 2rem;
+}
+}
+@media (max-width: 480px) {
+.head > h1 {
+  font-size: 2rem;
+}
+}
+.head-container {
+position: relative;
+width: 100%;
+height: 300px;
+background-size: cover;
+background-position: center;
+text-align: center;
+color: white;
+}
+.head-container h1 {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+font-size: 3rem;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/*Referenssisivun otsikko*/
+h2{
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/*Tekstien muotoilut*/
+p
+{
+padding: 50px;
+font-family: Arial, Helvetica, sans-serif;
+color: rgb(0, 0, 0);
+text-shadow: 10px 10px 5px rgb(172, 172, 172);
+text-align: left;
+font-size: 1.1rem;
+}
+
+
+/* Kuvien koko ja asettelu */
+.kuvat {
+width: 100%;
+height: 200px;
+object-fit: cover;
+border-radius: 10%;
+padding: 20px;
+}
+
+
+/* Responsiivinen rivi galleriaelementeille */
+.row {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+}
+
+/* Responsiivinen gallerian elementti */
+.responsive {
+padding: 0 10px;
+width: 50%;
+padding: 50px;
+}
+
+/* Media query pienemmille näytöille */
+@media only screen and (max-width: 1100px) {
+.responsive {
+  width: 100%; /* Täysi leveys pienemmillä näytöillä */
+}
+}
+
+/* Etusivun elementit, "laatikot" */
+div.gallery {
+border: 2px solid #ccc;
+margin-top: 20px;
+padding: 10px;
+text-align: center;
+border-radius: 20px;
+background-color: #f9f9f9;
+height: 100%;
+}
+
+div.gallery:hover {
+border-color: #555;
+}
+
+div.gallery img {
+width: 100%;
+height: auto;
+border-radius: 10px;
+}
+
+div.desc {
+margin-top: 10px;
+}
+
+.clearfix::after {
+content: "";
+display: table;
+clear: both;
+}
+
+
+
+/* Kuvien asetukset */
+.imgs
+{
+padding: 10px;
+height: 300px;
+object-fit: cover;
+}
+
+.logo
+{
+height: 300px;
+width: 300px;
+object-fit: cover;
 }
