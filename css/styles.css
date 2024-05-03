@@ -115,6 +115,7 @@ clear: both;
 }
 
 
+
 /* Kuvien asetukset */
 .imgs
 {
@@ -128,4 +129,22 @@ object-fit: cover;
 height: 300px;
 width: 300px;
 object-fit: cover;
+}
+
+#topbtn {
+position: fixed;
+bottom: 20px;
+right: 30px;
+font-size: 12px;
+border: none;
+outline: none;
+background-color: rgb(201, 201, 201);
+color: rgb(0, 0, 0);
+cursor: pointer;
+padding: 15px;
+border-radius: 4px;
+}
+
+#topbtn:hover {
+background-color: #ffffff;
 }
