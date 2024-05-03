@@ -148,3 +148,23 @@ border-radius: 4px;
 #topbtn:hover {
 background-color: #ffffff;
 }
+
+/* Logon ja kuvien "animaatiot" */
+.navbar-brand
+{
+  transition: transform 0.3s ease-in-out;
+}
+.navbar-brand:hover 
+{
+    transform: scale(1.1);
+}
+
+.kuvat
+{
+  transition: transform 0.3s ease-in-out;
+}
+.kuvat:hover
+{
+    transform: scale(1.1);
+    opacity: 0.5;
+}
