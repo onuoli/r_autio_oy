@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 24, 2024 at 12:42 PM
+-- Generation Time: May 04, 2024 at 03:37 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -139,47 +139,27 @@ INSERT INTO `tyontekija` (`tyontekijaID`, `etunimi`, `sukunimi`, `rooli`, `tunnu
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tyotehtava`
---
-
-CREATE TABLE `tyotehtava` (
-  `tyotehtavaID` int(11) NOT NULL,
-  `vikailmoitusID` int(11) NOT NULL,
-  `tyontekijaID` int(11) NOT NULL,
-  `kuvaus` text NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 0,
-  `korjaustoimenpide` text NOT NULL,
-  `valmistumisaika` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
-
---
--- Dumping data for table `tyotehtava`
---
-
-INSERT INTO `tyotehtava` (`tyotehtavaID`, `vikailmoitusID`, `tyontekijaID`, `kuvaus`, `status`, `korjaustoimenpide`, `valmistumisaika`) VALUES
-(1, 1, 1, 'Asukkaan mukaan hanasta tulee vain kylmää vettä.', 0, '', NULL),
-(2, 2, 1, 'Asukkaan mukaan pistorasiasta ei tule sähköä', 1, 'Sulaketaulusta oli sulake kärähtänyt, vaihdettiin tilalle uusi sulake.', '2024-04-24 10:58:04');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `vikailmoitus`
 --
 
 CREATE TABLE `vikailmoitus` (
   `vikailmoitusID` int(11) NOT NULL,
   `asuntoID` int(11) NOT NULL,
+  `tyontekijaID` int(11) DEFAULT NULL,
   `kuvaus` text NOT NULL,
-  `luontipaiva` datetime NOT NULL DEFAULT current_timestamp()
+  `toimenpide` text DEFAULT NULL,
+  `luontiaika` datetime NOT NULL DEFAULT current_timestamp(),
+  `valmistumisaika` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `vikailmoitus`
 --
 
-INSERT INTO `vikailmoitus` (`vikailmoitusID`, `asuntoID`, `kuvaus`, `luontipaiva`) VALUES
-(1, 1, 'Hanasta tulee vain kylmää vettä.', '2024-04-23 16:56:29'),
-(2, 2, 'Pistorasiasta ei tule sähköä.', '2024-04-23 16:58:39');
+INSERT INTO `vikailmoitus` (`vikailmoitusID`, `asuntoID`, `tyontekijaID`, `kuvaus`, `toimenpide`, `luontiaika`, `valmistumisaika`) VALUES
+(1, 1, NULL, 'Hanasta vuotaa vettä', NULL, '2024-05-03 15:55:41', NULL),
+(2, 2, 1, 'Pistorasiasta ei tule sähköä', NULL, '2024-05-03 15:58:03', NULL),
+(3, 3, 2, 'Kylpyhuoneen lattiakaivo ei vedä', 'Avattiin lattiakaivo ja poistettiin tukos kemikaaleilla', '2024-05-03 15:59:46', '2024-05-04 15:58:30');
 
 -- --------------------------------------------------------
 
@@ -240,19 +220,12 @@ ALTER TABLE `tyontekija`
   ADD PRIMARY KEY (`tyontekijaID`);
 
 --
--- Indexes for table `tyotehtava`
---
-ALTER TABLE `tyotehtava`
-  ADD PRIMARY KEY (`tyotehtavaID`),
-  ADD KEY `vikailmoitusID` (`vikailmoitusID`),
-  ADD KEY `tyontekijaID` (`tyontekijaID`);
-
---
 -- Indexes for table `vikailmoitus`
 --
 ALTER TABLE `vikailmoitus`
   ADD PRIMARY KEY (`vikailmoitusID`),
-  ADD KEY `asuntoID` (`asuntoID`);
+  ADD KEY `asuntoID` (`asuntoID`),
+  ADD KEY `tyontekijaID` (`tyontekijaID`);
 
 --
 -- Indexes for table `yhteydenotto`
@@ -295,16 +268,10 @@ ALTER TABLE `tyontekija`
   MODIFY `tyontekijaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tyotehtava`
---
-ALTER TABLE `tyotehtava`
-  MODIFY `tyotehtavaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `vikailmoitus`
 --
 ALTER TABLE `vikailmoitus`
-  MODIFY `vikailmoitusID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `vikailmoitusID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `yhteydenotto`
@@ -335,17 +302,11 @@ ALTER TABLE `isannoitsija`
   ADD CONSTRAINT `isannoitsija_ibfk_1` FOREIGN KEY (`taloyhtioID`) REFERENCES `taloyhtio` (`taloyhtioID`);
 
 --
--- Constraints for table `tyotehtava`
---
-ALTER TABLE `tyotehtava`
-  ADD CONSTRAINT `tyotehtava_ibfk_1` FOREIGN KEY (`vikailmoitusID`) REFERENCES `vikailmoitus` (`vikailmoitusID`),
-  ADD CONSTRAINT `tyotehtava_ibfk_2` FOREIGN KEY (`tyontekijaID`) REFERENCES `tyontekija` (`tyontekijaID`);
-
---
 -- Constraints for table `vikailmoitus`
 --
 ALTER TABLE `vikailmoitus`
-  ADD CONSTRAINT `vikailmoitus_ibfk_1` FOREIGN KEY (`asuntoID`) REFERENCES `asunto` (`asuntoID`);
+  ADD CONSTRAINT `vikailmoitus_ibfk_1` FOREIGN KEY (`asuntoID`) REFERENCES `asunto` (`asuntoID`),
+  ADD CONSTRAINT `vikailmoitus_ibfk_2` FOREIGN KEY (`tyontekijaID`) REFERENCES `tyontekija` (`tyontekijaID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
