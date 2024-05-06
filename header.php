@@ -22,6 +22,14 @@
 
 <body>
 <button onclick="topFunction()" id="topbtn" title="Go to top">Ylös</button>  
+<div id="phone" class="dropdown">
+  <img src="img/phone.png" alt="" height="40">
+  <div class="dropdown-content left-aligned">
+    <a class="linkki" href="tel:+358401234567">+358401234567 Toimisto</a>
+    <a class="linkki" href="tel:+358100234567">+358100234567 Päivystys</a>
+    <a class="linkki" href="mailto:info@rautiooy.com">info@rautiooy.com Sähköposti</a>
+  </div>
+</div> 
 
 <!--Navbar -Henry-->
 <div class="stickynavbar">
