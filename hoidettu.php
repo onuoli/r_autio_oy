@@ -1,4 +1,4 @@
-<?php
+<?php //Tämä toimii tietokannan kanssa eli saa kirjoitettua toimenpiteen ja aika haetaan date funktiolla
     require "yhteys.php";
 
     if(isset($_GET['upd_id'])){

@@ -1,4 +1,4 @@
-<?php
+<?php // työntekijöiden json-tiedostoon lukeminen
     include('yhteys.php');
 
     $listaus="SELECT tyontekijaID, sukunimi, etunimi, rooli FROM tyontekija ORDER BY sukunimi, etunimi, rooli";

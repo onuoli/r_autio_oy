@@ -1,5 +1,5 @@
 <?php    
-
+// Tämä ei onnistunut, työntekijän lisääminen tehtävälle
 require('yhteys.php');
 
 if (isset($_GET['tyontekijaID'])) {

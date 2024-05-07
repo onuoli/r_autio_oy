@@ -114,6 +114,7 @@
                         <td><?php echo $rivit2->luontiaika; ?></td>
                         <td><?php echo $rivit2->etunimi . ' ' . $rivit2->sukunimi; ?></td>
                         <!-- Tästä napista voisi aueta modal, johon voisi kirjoittaa tehdyt toimenpiteet, ja merkitä työ tehdyksi timestampilla automaattisesti-->
+                        <!-- Toimii erillisen sivun kautta en saanut modaliin kytkettyä -->
                         <td><a class="btn btn-warning" href="hoidettu.php?upd_id=<?php echo $rivit2->vikailmoitusID; ?>">Merkitse hoidetuksi</a></td></tr>
                         <?php endwhile; ?>
                 </tbody>
