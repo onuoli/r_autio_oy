@@ -86,7 +86,7 @@
                         <td><?php echo $rivit1->kuvaus; ?></td>
                         <td><?php echo $rivit1->luontiaika; ?></td>
                         <!-- Tästä napista voisi aueta modal, josta voi merkitä työntekijän -->
-                        <td><a class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" href="">Lisää työntekijä</a></td>
+                        <td><a class="btn btn-warning" href="valitse.php?upd_id=<?php echo $rivit1->vikailmoitusID; ?>">Lisää työntekijä</a></td>
                     </tr>
                     <?php endwhile; ?>
                 </tbody>
@@ -150,37 +150,5 @@
             </table>
             </div>
         </div>
-
-<!-- Modali työntekijän valitsemiselle joka ei vielä toimi -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header"><h1 class="modal-title fs-5" id="exampleModalLabel">Työntekijän lisääminen vikailmoitukselle</h1></div>
-        <div class="modal-body">
-            <form action="valitse.php" method="get">
-            <input type="hidden" name="vikailmoitusID" id="vikailmoitusID">
-                <label for="tyontekija">Valitse työntekijä:</label>
-                    <select name="tyontekijaID" id="tyontekija">
-                        
-                        <?php include('kysely.php');
-                            $json_data = file_get_contents("tyontekijat.json");
-                            $tyontekijat = json_decode($json_data, true);
-                            if (count($tyontekijat) != 0) {
-                                foreach ($tyontekijat as $key) {
-                                    foreach ($key as $tyontekija) {
-                                        $nimi = $tyontekija['Sukunimi'] . ' ' . $tyontekija['Etunimi'];
-                                        echo '<option value="' . $tyontekija['TyontekijaID'] . '">' . $nimi . '</option>';
-                                    }
-                                }
-                            }?>
-                            
-                </select><br>
-                <button name="valitse" type="submit" class="btn btn-primary">Valitse</button>
-            </form>
-        </div>
-      <div class="modal-footer"><a href="tyo_sivu.php" class="btn btn-secondary">Close</a></div>
-    </div>
-  </div>
-</div>
     </body> 
 </html>

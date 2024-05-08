@@ -20,3 +20,11 @@ var myModal = new bootstrap.Modal(document.getElementById('exampleModal2'), {
 });
 myModal.show();
 });
+
+$(document).ready(function() {
+  var myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+    backdrop: 'static',
+    keyboard: false
+  });
+  myModal.show();
+});
