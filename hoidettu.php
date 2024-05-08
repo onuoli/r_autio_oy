@@ -1,4 +1,20 @@
-<?php //Tämä toimii tietokannan kanssa eli saa kirjoitettua toimenpiteen ja aika haetaan date funktiolla
+<head>
+    <title>Khuolto R. Autio</title>
+    <link rel="icon" href="">
+    <meta charset="UTF-8">
+    <meta name="description" content="Kiinteistöhuolto R. Autio">
+    <meta name="author" content="Otso Roi, Tuukka, Henry">
+    <meta name="keywords" content="Kiinteistöhuolto">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">	
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="js/anime.min.js"></script>
+</head>
+
+<?php
     require "yhteys.php";
 
     if(isset($_GET['upd_id'])){
@@ -7,6 +23,17 @@
         $data = $yhteys->query($kysely);
         $rivit = $data->fetch(PDO::FETCH_OBJ);
     }
+
+    if(isset($_GET['upd_id'])){
+      $vikailmoitusID = $_GET['upd_id'];
+      $kysely = "SELECT kuvaus FROM vikailmoitus WHERE vikailmoitusID = '$vikailmoitusID'";
+      $data = $yhteys->query($kysely);
+      $rivit = $data->fetch(PDO::FETCH_OBJ);
+      $kuvaus = '';
+      if ($rivit && isset($rivit->kuvaus)) {
+          $kuvaus = $rivit->kuvaus;
+      }
+  }    
 
     if(isset($_POST['laheta'])){
         $toimenpide=$_POST['toimenpide'];
@@ -18,9 +45,26 @@
     }
 ?>
 
-<form method="POST" action="hoidettu.php?upd_id=<?php echo $vikailmoitusID; ?>" class="form-inline">
-    <div class="form-group mx-sm-3 mb-2">
-        <textarea type="text" class="form-control" style="height: 250px;" name="toimenpide" id="toimenpide" placeholder="Toimenpide"></textarea>
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Hoidettava ilmoitus</h1>
+      </div>
+      <div class="modal-body">
+      <div class="form-group mx-sm-3 mb-2">
+            <label for=""><?php echo $kuvaus; ?></label>
+      </div>
+        <form method="POST" action="hoidettu.php?upd_id=<?php echo $vikailmoitusID; ?>" class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+            <textarea type="text" class="form-control" style="height: 250px;" name="toimenpide" id="toimenpide" placeholder="Toimenpide"></textarea>
+            </div>
+        <button name="laheta" type="submit" class="btn btn-primary mx-sm-3 mb-2" onclick="return confirm('Oletko varma, että haluat päivittää?')">Päivitä</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="tyo_sivu.php" class="btn btn-secondary">Close</a>
+      </div>
     </div>
-    <button name="laheta" type="submit" class="btn btn-primary mx-sm-3 mb-2">Päivitä</button>
-</form>
+  </div>
+</div>

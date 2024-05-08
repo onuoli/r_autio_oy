@@ -65,7 +65,7 @@
         <link rel="stylesheet" href="css/styles.css">	
     </head>
     <body>
-    <div class="container">
+        <div class="container">
             <h1>Hoitamattomat vikailmoitukset</h1>
             <div class="table-responsive">
             <table class="table">
@@ -114,7 +114,7 @@
                         <td><?php echo $rivit2->luontiaika; ?></td>
                         <td><?php echo $rivit2->etunimi . ' ' . $rivit2->sukunimi; ?></td>
                         <!-- Tästä napista voisi aueta modal, johon voisi kirjoittaa tehdyt toimenpiteet, ja merkitä työ tehdyksi timestampilla automaattisesti-->
-                        <!-- Toimii erillisen sivun kautta en saanut modaliin kytkettyä -->
+                        <!-- Siirtää toiselle sivulle ja avaa modalin automaattisesti -Henry-->
                         <td><a class="btn btn-warning" href="hoidettu.php?upd_id=<?php echo $rivit2->vikailmoitusID; ?>">Merkitse hoidetuksi</a></td></tr>
                         <?php endwhile; ?>
                 </tbody>
@@ -151,7 +151,7 @@
             </div>
         </div>
 
-<!-- Modali työntekijän valitsemiselle joka ei toimi -->
+<!-- Modali työntekijän valitsemiselle joka ei vielä toimi -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -181,6 +181,6 @@
       <div class="modal-footer"><a href="tyo_sivu.php" class="btn btn-secondary">Close</a></div>
     </div>
   </div>
-</div>        
-    </body>
+</div>
+    </body> 
 </html>
