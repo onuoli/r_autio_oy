@@ -85,12 +85,12 @@ padding: 50px;
 
 /* Etusivun elementit, "laatikot" */
 div.gallery {
-border: 2px solid #ccc;
+border: 5px solid #4a508a;
 margin-top: 20px;
 padding: 10px;
 text-align: center;
 border-radius: 20px;
-background-color: #f9f9f9;
+background-color: #A7bbcb;
 height: 100%;
 }
 
@@ -237,6 +237,24 @@ margin-right: auto;
 
 select
 {
-  height: 40px;
-  width: 200px;
+height: 40px;
+width: 200px;
+}
+
+/* roi värit */
+
+.bg-customnav{
+background-color: #24344D !important;
+}
+
+.bg-custombtn{
+background-color: #3E567C !important;
+}
+
+.bg-mainbg{
+background-color: #8ca0b1 !important;
+}
+
+.bg-lowbg{
+background-color: #24344D !important;
 }
