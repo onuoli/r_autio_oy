@@ -7,10 +7,10 @@
 
 <?php include "header.php"?>
 
-
+<div class="bg-mainbg">
 
 <!--Otsikon containeri -Henry-->
-<div class="head-container bg-light">
+<div class="head-container bg-custombtn">
     <h1 id="mainheader">Kiinteistöhuolto R. Autio</h1>
 </div>
 
@@ -48,9 +48,11 @@
               </div>
             </div>
 
-<div class="clearfix"></div>
+            <div class="clearfix"></div>
     </div>
   </div>
+</div>
+
 </div>
 
 <?php include "footer.php"?>

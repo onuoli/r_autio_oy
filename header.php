@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<button onclick="topFunction()" id="topbtn" title="Go to top">Ylös</button>  
+<button onclick="topFunction()" id="topbtn" title="Go to top">Ylös</button>
 <div id="phone" class="dropdown">
   <img src="img/phone.png" alt="" height="40">
   <div class="dropdown-content left-aligned">
@@ -31,9 +31,10 @@
   </div>
 </div> 
 
+
 <!--Navbar -Henry-->
 <div class="stickynavbar">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-customnav">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php"><img src="img/r_autio_oy.png" alt="Logo" height="50"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +59,7 @@
                 <a id="link4" class="nav-link" href="referenssit.php">Referenssit</a>
             </li>   
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal" href="yhtotto_sivu.php">Lähetä viesti</a>
+                <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="yhtotto_sivu.php">Lähetä viesti</a>
             </li>  
             <!--Dropdownmenu jossa toimii tällä hetkellä kuluttajan kirjautumislinkki ja yhtottolomake -Henry-->
             <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Kirjaudu</button>
@@ -66,7 +67,7 @@
                     <li><a class="dropdown-item" href="as_kirjautuminen.php">Asiakas</a></li>
                     <li><a class="dropdown-item" href="tyo_kirjautuminen.php">K.huolto R. Autio</a></li>
                     <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" href="yhtotto_sivu.php">Ota yhteyttä</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="yhtotto_sivu.php">Ota yhteyttä</a></li>
                 </ul>
         </li>
         </ul>
@@ -76,7 +77,7 @@
 </div>
 
 <!--Modalilla yhtottolomake-Henry-->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

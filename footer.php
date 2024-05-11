@@ -1,5 +1,5 @@
 <!--Footerin koodit -Henry-->
-<footer class="footer mt-auto py-3 bg-light">  
+<footer class="footer mt-auto py-3 bg-lowbg">
 <div class="container">
   <div class="container-fluid mt-5">
     <div class="row">
