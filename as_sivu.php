@@ -70,7 +70,7 @@
             <form action="vikailmoitus_lomak.php" method="POST">
               <input type="hidden" name="talleta">
               <div class="form-group">
-                <input type="text" class="form-control" name="asuntoID" value="<?php if(isset($asuntoID)) echo $rivi['asuntoID'];?>" placeholder="Asuntosi">
+              <input type="text" class="form-control" name="asuntoID" value="<?php if(isset($asuntoID)) echo $_SESSION['asuntoID'];?>" placeholder="<?php echo $_SESSION['asuntoID'];?>">
               </div> <br>
               <div class="form-group">
                 <textarea type="text" class="form-control" style="height: 250px;" name="kuvaus" placeholder="Vika/puute"></textarea>

@@ -32,7 +32,11 @@
         $kirjaudu = $yhteys->query("SELECT * FROM asukas WHERE tunnus = '$tunnus'");
         $kirjaudu->execute();
 
+        $idkysely = $yhteys->query("SELECT asuntoID FROM asukas WHERE tunnus = '$tunnus'");
+        $idkysely->execute();
+
         $data = $kirjaudu->fetch(PDO::FETCH_ASSOC);
+        $asuntoID = $idkysely->fetch(PDO::FETCH_ASSOC);
 
         // tarkistetaan tietokantahaun rivit
         if($kirjaudu->rowCount() > 0){
@@ -42,6 +46,7 @@
             if($salasana == $data['salasana']){
                 $_SESSION['asukas'] = true;
                 $_SESSION['tunnus'] = $data['tunnus'];
+                $_SESSION['asuntoID'] = $asuntoID['asuntoID'];
                 header("location: as_sivu.php");
                 exit;
             }else{
