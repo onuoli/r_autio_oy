@@ -62,13 +62,15 @@
                 <a class="nav-link" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="yhtotto_sivu.php">Lähetä viesti</a>
             </li>  
             <!--Dropdownmenu jossa toimii tällä hetkellä kuluttajan kirjautumislinkki ja yhtottolomake -Henry-->
+            <div class="btn-group">
             <button class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Kirjaudu</button>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="as_kirjautuminen.php">Asiakas</a></li>
-                    <li><a class="dropdown-item" href="tyo_kirjautuminen.php">K.huolto R. Autio</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="yhtotto_sivu.php">Ota yhteyttä</a></li>
-                </ul>
+              <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                <li><a class="dropdown-item" href="as_kirjautuminen.php">Asiakas</a></li>
+                <li><a class="dropdown-item" href="tyo_kirjautuminen.php">K.huolto R. Autio</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal3" href="yhtotto_sivu.php">Ota yhteyttä</a></li>
+              </ul>
+          </div>
         </li>
         </ul>
         </div>

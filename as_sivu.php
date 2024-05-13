@@ -103,12 +103,14 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Vikailmoitus</h1>
       </div>
       <div class="modal-body">
-            <form action="vikailmoitus_lomak.php" method="POST">
-              <input type="hidden" name="asuntoID">
+      <form action="vikailmoitus_lomak.php" method="POST">
+              <input type="hidden" name="talleta">
               <div class="form-group">
-                <input type="text" class="form-control" name="asuntoID" value="<?php echo $_SESSION['asuntoID'];?>" placeholder="<?php echo $_SESSION['asuntoID'];?>">
+              <label for="asuntoID">Asuntonumerosi:</label>
+              <input type="text" class="form-control" name="asuntoID" value="<?php echo $_SESSION['asuntoID']; ?>" placeholder="Asuntosi" readonly>
               </div> <br>
               <div class="form-group">
+              <label for="vika">Vika/Puute:</label>
                 <textarea type="text" class="form-control" style="height: 250px;" name="kuvaus" placeholder="Vika/puute"></textarea>
               </div>  
               <br>
