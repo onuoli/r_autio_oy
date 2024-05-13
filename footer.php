@@ -3,7 +3,7 @@
 <div class="container">
   <div class="container-fluid mt-5">
     <div class="row">
-        <div class="col-xl-6 col-md-6 col-sm-12 footercontent">    
+        <div class="col-xl-6 col-md-6 col-sm-12 footercontent fontti">    
             <span class="">Kiinteistöhuolto R. Autio</span><br>
             <span class="">Osoite: Esimerkkikatu 123, 90000 Tornio</span><br>
             <span class="">Puhelin: 040 123 4567</span><br>

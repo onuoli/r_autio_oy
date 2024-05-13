@@ -177,7 +177,7 @@ text-decoration: none;
 display: block;
 }
 
-.dropdown-content a:hover {background-color: #9696964b;}
+.dropdown-content a:hover {background-color: #9696964b; margin: 2px;}
 
 .dropdown:hover .dropdown-content {display: block;}
 

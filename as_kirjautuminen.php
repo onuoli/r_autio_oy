@@ -77,11 +77,11 @@
                 <div class="card-body">
                     <!-- haetaan tiedot kentistä post metodilla -->
                     <form method="POST" action="as_kirjautuminen.php">
-                        <div class="form-floating">
+                        <div class="form-floating mb-2">
                             <input type="text" name="tunnus" class="form-control" placeholder="Syötä tunnus" required>
                             <label for="tunnus">Tunnus</label>
                         </div>
-                        <div class="form-floating">
+                        <div class="form-floating mb-2">
                             <input type="password" name="salasana" class="form-control" placeholder="Syötä salasana" required>
                             <label for="salasana">Salasana</label>
                         </div>
