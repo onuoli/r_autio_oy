@@ -87,16 +87,16 @@
       <div class="modal-body">
             <form action="yhtotto_sivu.php" method="POST">
               <input type="hidden" name="talleta">
-              <div class="form-group">
+              <div class="form-group mb-2">
                 <input type="text" class="form-control" name="nimi" placeholder="Nimesi">
               </div> 
-              <div class="form-group">
+              <div class="form-group mb-2">
                 <input type="text" class="form-control" name="puhelin" placeholder="Puhelin">
               </div> 
-              <div class="form-group">
+              <div class="form-group mb-2">
                 <input type="text" class="form-control" name="email" placeholder="Sähköposti">
               </div>  
-              <div class="form-group">
+              <div class="form-group mb-2">
                 <textarea type="text" class="form-control" name="syy" placeholder="Viestisi"></textarea>
               </div>  
               <br>
