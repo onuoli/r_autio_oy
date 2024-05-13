@@ -8,8 +8,8 @@
 <div id="services" class="container">
   <div class="container-fluid mt-5">
     <div class="row">
-        <img class="col-xl-6 col-md-6 col-sm-12 imgs" src="" alt="">
-        <p class="col-xl-6 col-md-12 col-sm-12">Olemme omistautunut tarjoamaan asiakkaillemme laadukkaita ja kattavia kiinteistöhuollon 
+        <img class="col-xl-6 col-md-6 col-sm-12 imgs" src="img/kuva2.png" alt="">
+        <p class="col-xl-6 col-md-6 col-sm-12">Olemme omistautunut tarjoamaan asiakkaillemme laadukkaita ja kattavia kiinteistöhuollon 
           ratkaisuja koko Suomen alueella.</br></br>Tarjoamme monipuolisia palveluita, jotka kattavat niin taloyhtiöiden ja kiinteistöjen ylläpidon 
           kuin erilaiset korjaus- ja huoltotehtävät. Huolehdimme rakennusten ulkoalueista, siivouksesta, lumitöistä, jätehuollosta ja paljon 
           muusta, varmistaen kiinteistöjen turvallisuuden ja viihtyvyyden ympäri vuoden.</p>
@@ -17,7 +17,7 @@
             kumppanuuksia asiakkaidemme kanssa tarjoamalla joustavia ja räätälöityjä ratkaisuja heidän tarpeisiinsa.</br></br>Olemme ylpeitä 
             ammattitaitoisesta henkilökunnastamme ja nykyaikaisista työmenetelmistämme, jotka mahdollistavat tehokkaan ja luotettavan 
             palvelun jokaisessa kohteessa.</p>
-        <img class="col-xl-6 col-md-6 col-sm-12 imgs" src="" alt="">
+        <img class="col-xl-6 col-md-6 col-sm-12 imgs" src="img/kuva5.jpg" alt="">
     </div>
   </div>
 </div>

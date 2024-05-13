@@ -16,6 +16,9 @@
     }else{
         header("location: index.php");
     }
+
+    // näille sivuille tulee vielä lisää tarkistuksia virheiden estämiseksi,
+    // mutta tällä hetkellä sessio toimii ja näyttää tunnuksen oikein
 ?>
 
 
@@ -43,6 +46,17 @@
 
 <?php
     require "yhteys.php";
+    $asuntoID = $_SESSION['asuntoID'];
+    $kysely = "SELECT etunimi, sukunimi FROM asukas WHERE asuntoID = :asuntoID";
+
+    $stmt = $yhteys->prepare($kysely);
+    $stmt->execute([':asuntoID' => $asuntoID]);
+
+    $rivit = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($rivit) {
+        $etunimi = $rivit['etunimi'];
+        $sukunimi = $rivit['sukunimi'];}
 ?>
 
 
@@ -64,13 +78,15 @@
 </head>
 
 <body>
-
+<div class="head-container bg-custombtn">
+    <h1 id="mainheader">KIINTEISTÖHUOLTO R. AUTIO <img src="img/r_autio_oy.png" alt="" height="40"></h1>
+</div>
 <!--Navbar-->
 <div class="stickynavbar">
-    <nav class="navbar navbar-expand-sm brown navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-customnav">
         <div class="container-fluid d-flex justify-content-between align-items-center">
             <!-- modaalin avaaminen -->
-            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" href="yhtotto_sivu.php">Vikailmoitus</button>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal4" href="yhtotto_sivu.php">Vikailmoitus</button>
             <!-- uloskirjautuminen -->
             <a href="uloskirjautuminen.php" class="btn btn-danger">Kirjaudu ulos</a>
         </div>
@@ -80,7 +96,7 @@
 
     
 <!-- modal-->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -88,9 +104,9 @@
       </div>
       <div class="modal-body">
             <form action="vikailmoitus_lomak.php" method="POST">
-              <input type="hidden" name="talleta">
+              <input type="hidden" name="asuntoID">
               <div class="form-group">
-              <input type="text" class="form-control" name="asuntoID" value="<?php if(isset($asuntoID)) echo $_SESSION['asuntoID'];?>" placeholder="<?php echo $_SESSION['asuntoID'];?>">
+                <input type="text" class="form-control" name="asuntoID" value="<?php echo $_SESSION['asuntoID'];?>" placeholder="<?php echo $_SESSION['asuntoID'];?>">
               </div> <br>
               <div class="form-group">
                 <textarea type="text" class="form-control" style="height: 250px;" name="kuvaus" placeholder="Vika/puute"></textarea>
@@ -112,11 +128,11 @@
   <br>
     <div class="row">
 
-        <p class="col-xl-6 col-md-6 col-sm-12">Tervetuloa (asukas)(Asunto)</p>
+        <p class="col-xl-6 col-md-6 col-sm-12">Tervetuloa <?php echo "$etunimi $sukunimi";?></p>
 
     </div>
 </div>
-
+<?php include "footer.php"?>
 </body>
 
 </html>

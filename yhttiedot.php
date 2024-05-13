@@ -8,16 +8,16 @@
 <div id="contact" class="container">
   <div class="container-fluid mt-5">
     <div class="row">
-        <img class="col-xl-6 col-md-6 col-sm-12 imgs" src="" alt="">
-        <p class="col-xl-6 col-md-6 col-sm-12">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <p class="col-xl-6 col-md-6 col-sm-12">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint 
-          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-        <img class="col-xl-6 col-md-6 col-sm-12 imgs" src="" alt="">
+        <p class="col-xl-6 col-md-6 col-sm-12">Toimisto<br>
+        <strong>+358401234567</strong><br><br>
+        Päivystys<br>
+        <strong>+358100234567</strong><br><br>
+        Sähköpostit<br>
+        <strong>etunimi.sukunimi@khuoltorautio.fi</strong><br><br>
+        </p>
+        <div class="col-xl-6 col-md-6 col-sm-12"><h1>Hallinto</h1><strong>R Autio</strong><br>Toimitusjohtaja<br>+358501357642<br><br>
+        <h1>Työnjohto</h1><strong>Pertti Pomo</strong><br>Työnjohtaja<br>+358501357643<br><br>
+        <h1>Työntekijät</h1><strong>Teppo Työmies</strong><br>Huoltomies<br>+358501357644<br><br></div>
     </div>
   </div>
 </div>
