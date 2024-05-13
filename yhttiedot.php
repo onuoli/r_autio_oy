@@ -1,9 +1,11 @@
 <?php include "header.php"?>
 
 <!--Otsikon containeri -Henry-->
-<div class="head-container bg-light">
+<div class="head-container bg-custombtn">
     <h1 id="mainheader">Kiinteistöhuolto R. Autio</h1>
 </div>
+
+<div class="bg-mainbg">
 
 <div id="contact" class="container">
   <div class="container-fluid mt-5">
@@ -23,5 +25,7 @@
 </div>
 
 <button onclick="navigateTo('index.php')" id="back" class="btn btn-primary">Takaisin</button>  
+
+</div>
 
 <?php include "footer.php"?>

@@ -1,10 +1,12 @@
 <?php include "header.php"?>
 
 <!--Otsikon containeri -Henry-->
-<div class="head-container bg-light">
+<div class="head-container bg-custombtn">
     <h2 class="head2">R. Autio OY on ylpeä siitä, että olemme voineet palvella monia tyytyväisiä asiakkaita vuosien varrella. 
       Alla on joitakin näytteitä referensseistämme:</h2>
 </div>
+
+<div class="bg-mainbg">
 
 <div id="refer" class="container">
     <div class="container-fluid mt-5">
@@ -27,5 +29,7 @@
   </div>
 
 <button onclick="navigateTo('index.php')" id="back" class="btn btn-primary">Takaisin</button>  
+
+</div>
 
 <?php include "footer.php"?>
