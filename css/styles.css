@@ -85,17 +85,20 @@ padding: 50px;
 
 /* Etusivun elementit, "laatikot" */
 div.gallery {
-border: 5px solid #4a508a;
+border: 5px solid #8387aa;
 margin-top: 20px;
 padding: 10px;
 text-align: center;
 border-radius: 20px;
-background-color: #A7bbcb;
+background-color: #e6f0ff;
 height: 100%;
 }
 
 div.gallery:hover {
-border-color: #555;
+border-color: #cecece;
+background-color: #ffffff;
+transform: scale(1.05);
+box-shadow: 6px 7px #a0a0a080;
 }
 
 div.gallery img {
@@ -131,7 +134,6 @@ opacity: 0.35;
 }
 
 #phone:hover {
-background-color: #ffffff;
 transform: scale(1.1);
 opacity: 1;
 }
@@ -145,7 +147,7 @@ display: inline-block;
 .dropdown-content {
 display: none;
 position: absolute;
-background-color: #f1f1f1;
+background-color: #e0e0e0;
 min-width: 160px;
 z-index: 1;
 left: -100px;
@@ -215,7 +217,7 @@ transition: transform 0.3s ease-in-out;
 .kuvat:hover
 {
   transform: scale(1.05);
-  opacity: 0.5;
+  opacity: 0.75;
 }
 
 
@@ -252,9 +254,9 @@ background-color: #3E567C !important;
 }
 
 .bg-mainbg{
-background-color: #8ca0b1 !important;
+background-color: #eefeff !important;
 }
 
 .bg-lowbg{
-background-color: #24344D !important;
+background-color: #3E567C !important;
 }
