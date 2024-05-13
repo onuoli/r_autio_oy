@@ -1,11 +1,11 @@
 <?php include "header.php"?>
 
+<div class="bg-mainbg">
+
 <!--Otsikon containeri -Henry-->
 <div class="head-container bg-custombtn">
     <h1 id="mainheader">Kiinteistöhuolto R. Autio</h1>
 </div>
-
-<div class="bg-mainbg">
 
 <!--Muutama juttu vain placeholderiksi jotta helpompi hahmotella -Henry-->
 <div id="rautio" class="container">
