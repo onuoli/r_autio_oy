@@ -9,7 +9,7 @@
 
 <div id="contact" class="container">
   <div class="container-fluid mt-5">
-    <div class="row">
+    <div class="row fontti">
         <p class="col-xl-6 col-md-6 col-sm-12">Toimisto<br>
         <strong>+358401234567</strong><br><br>
         Päivystys<br>
