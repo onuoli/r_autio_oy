@@ -6,7 +6,7 @@
 
     // tarkistus, että sessio onko sessio käynissä ja merkattu työntekijälle
     if(isset($_SESSION['tyontekija']) && isset($_SESSION['tunnus'])){
-        echo "Hei " . $_SESSION['tunnus'];
+
     // ohjataan asukas sessio asukassivulle
     }elseif(isset($_SESSION['asukas'])){
         header("location: as_sivu.php");
@@ -62,6 +62,8 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="js/scripts.js"></script>
         <link rel="stylesheet" href="css/styles.css">	
     </head>
     <body>
@@ -122,9 +124,11 @@
             </div>
             <h1>Hoidetut vikailmoitukset</h1>
             <div class="table-responsive">
+            <form method="POST" action="poista.php">    
             <table class="table">
                 <thead>
                     <tr>
+                        <th>Valitse</th>
                         <th>vikailmoitusID</th>
                         <th>osoite</th>
                         <th>kuvaus</th>
@@ -137,15 +141,19 @@
                 <tbody>
                     <?php while($rivit3 = $data3->fetch(PDO::FETCH_OBJ)): ?>
                     <tr>
+                        <td><input id="deletechk" type="checkbox" name="poista[]" value="<?php echo $rivit3->vikailmoitusID; ?>"></td>
                         <td><?php echo $rivit3->vikailmoitusID; ?></td>
                         <td><?php echo $rivit3->osoite . ' ' . $rivit3->asnumero . ' ' . $rivit3->postinumero . ' ' . $rivit3->kaupunki; ?></td>
                         <td><?php echo $rivit3->kuvaus; ?></td>
                         <td><?php echo $rivit3->luontiaika; ?></td>
                         <td><?php echo $rivit3->etunimi . ' ' . $rivit3->sukunimi; ?></td>
                         <td><?php echo $rivit3->toimenpide; ?></td>
-                        <td><?php echo $rivit3->valmistumisaika; ?></td>
+                        <td><?php echo $rivit3->valmistumisaika; ?></td>                        
                     </tr>
-                    <?php endwhile; ?>
+                    <?php endwhile; ?> 
+                    <button id="deletebtn" type="submit" name="poista" class="btn btn-danger">Poista valitut</button>  
+                    <div id="showdeletebtn" class="btn btn-warning">Poista ilmoituksia</div> 
+            </form>
                 </tbody>
             </table>
             </div>

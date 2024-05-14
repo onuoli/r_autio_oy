@@ -28,3 +28,33 @@ $(document).ready(function() {
   });
   myModal.show();
 });
+
+// Poistamisbuttonin hide and show funktiot
+$(document).ready(function() {
+
+  $('#deletebtn, #deletechk').hide();
+  $('#showdeletebtn').click(function() {
+
+      $(this).hide();
+      $('#deletebtn, #deletechk').show();
+      $('#deletebtn').click(function(event) {
+          event.preventDefault();
+
+          var valitut = $('input[type="checkbox"][name="poista[]"]:checked').length;
+
+        // Tarkistetus että on valittu edes yksi
+        if (valitut > 0) {
+            $('#deletebtn, #deletechk').hide();
+
+            $('#showdeletebtn').show();
+            
+            $(this).closest('form').submit();
+        } else {
+            alert('Valitse vähintään yksi kohde poistettavaksi.');
+            $('#deletebtn, #deletechk').hide();
+
+            $('#showdeletebtn').show();
+        }             
+    })         
+  })         
+})         
