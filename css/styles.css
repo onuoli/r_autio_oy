@@ -277,3 +277,15 @@ background-color: #eefeff !important;
 .bg-lowbg{
 background-color: #3E567C !important;
 }
+
+/* kirjautumissivujen muokkausta */
+.login {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login-card {
+  width: 300px;
+}
