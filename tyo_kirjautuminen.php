@@ -64,8 +64,8 @@
     </head>
     <body>
         <!-- Kirjautumiseen tarvittavat kentät, ulkonäön voi muokata myöhemmin -Otso -->
-        <div class="container">
-            <div class="card">
+        <div class="container login">
+            <div class="card login-card">
                 <div class="card-header">
                     <h4>Työntekijän kirjautuminen</h4>
                 </div>
