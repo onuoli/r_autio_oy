@@ -48,8 +48,13 @@
     */
 ?>
 
-<br>
-<a href="uloskirjautuminen.php" class="btn btn-danger">Kirjaudu ulos</a>
+    <br>
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <a href="uloskirjautuminen.php" class="btn btn-danger">Kirjaudu ulos</a>
+            <a href="yhtotot.php" class="btn btn-warning yhtototbtn">Yhteydenotot</a>
+        </div>
+
+
 <!DOCTYPE html>
 <html lang ="">
     <head>
